@@ -1,0 +1,57 @@
+﻿@model string
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h4 class="mb-3 text-muted">Сокращатель ссылок</h4>
+
+<form id="urlShorterForm" asp-action="shortUrl" asp-controller="Url" style="display: flex; flex-direction: column; align-items: flex-start;">
+    <input name="longUrl" class="form-control" placeholder="Введите ссылку, которую нужно сократить" style="width: 80%; margin-top: 20px;">
+    <button id="createUrlShorter" class="btn btn-primary" type="button">Сократить</button>
+    <textarea name="outputUrl" type="text" class="form-control" style="width: 80%; margin-top: 10px;"></textarea>
+    <button id="copyToClipboard" class="btn btn-secondary" type="button">Скопировать</button>
+    <button id="clearForm" class="btn btn-secondary" type="button">Очистить</button>
+</form>
+
+@section Scripts
+{
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $('#createUrlShorter').on('click', function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: '/Url/ShortUrl',
+                method: 'POST',
+                data: $('#urlShorterForm').serialize(),
+                success: function (data) {
+                    $('textarea[name="outputUrl"]').val(data.outputUrl);
+                },
+                error: function (error) {
+                    console.error('Ошибка:', error);
+                }
+            });
+        });
+        $('#copyToClipboard').click(async function () {
+            let outputUrl = $('textarea[name="outputUrl"]').val();
+            try {
+                await navigator.clipboard.writeText(outputUrl);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Успешно!',
+                    text: 'Ссылка скопирована в буфер обмена'
+                });
+            } catch (err) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ошибка',
+                    text: 'Ошибка при копировании'
+                });
+                console.error('Ошибка при копировании', err);
+            }
+        });
+        $('#clearForm').click(function () {
+            $('#urlShorterForm')[0].reset();
+        });
+    </script>
+}
