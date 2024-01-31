@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShorterCreater", "UrlShorterCreater.csproj", "{E64D9279-9D53-4D13-A227-1F9298428562}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UrlShorterCreater", "UrlShorterCreater.csproj", "{E64D9279-9D53-4D13-A227-1F9298428562}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UrlShorterCreater.Tests", "UrlShorterCreater.Tests", "{589D1B1E-557B-4A60-B973-F55A06FE7229}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShorterCreater.Tests", "..\UrlShorterCreater.Tests\UrlShorterCreater.Tests.csproj", "{04AE49C2-4031-4F51-843E-1163D0F9F236}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{E64D9279-9D53-4D13-A227-1F9298428562}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E64D9279-9D53-4D13-A227-1F9298428562}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E64D9279-9D53-4D13-A227-1F9298428562}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04AE49C2-4031-4F51-843E-1163D0F9F236}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04AE49C2-4031-4F51-843E-1163D0F9F236}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04AE49C2-4031-4F51-843E-1163D0F9F236}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04AE49C2-4031-4F51-843E-1163D0F9F236}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{04AE49C2-4031-4F51-843E-1163D0F9F236} = {589D1B1E-557B-4A60-B973-F55A06FE7229}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {90FA3613-52AA-4929-9BD3-51FBF3544E79}

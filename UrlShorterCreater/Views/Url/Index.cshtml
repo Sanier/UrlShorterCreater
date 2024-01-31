@@ -7,10 +7,10 @@
 
 <form id="urlShorterForm" asp-action="shortUrl" asp-controller="Url" style="display: flex; flex-direction: column; align-items: flex-start;">
     <input name="longUrl" class="form-control" placeholder="Введите ссылку, которую нужно сократить" style="width: 80%; margin-top: 20px;">
-    <button id="createUrlShorter" class="btn btn-primary" type="button">Сократить</button>
+    <button id="createUrlShorter" class="btn btn-primary" style="margin-top: 10px" type="button">Сократить</button>
     <textarea name="outputUrl" type="text" class="form-control" style="width: 80%; margin-top: 10px;"></textarea>
-    <button id="copyToClipboard" class="btn btn-secondary" type="button">Скопировать</button>
-    <button id="clearForm" class="btn btn-secondary" type="button">Очистить</button>
+    <button id="copyToClipboard" class="btn btn-secondary" style="margin-top: 10px" type="button">Скопировать</button>
+    <button id="clearForm" class="btn btn-secondary" style="margin-top: 10px" type="button">Очистить</button>
 </form>
 
 @section Scripts
